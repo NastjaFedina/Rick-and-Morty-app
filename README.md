@@ -60,13 +60,16 @@ src/
    cd Rick-and-Morty-app
 
 2. Instalē atkarības
+```bash
 npm install
 
 3. Palaid izstrādes režīmā
+```bash
 npm run dev
 Atver pārlūkā: http://localhost:5173
 
 4. Veido produkcijas būvējumu
+```bash
 npm run build
 
 ## API
