@@ -4,6 +4,13 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
+<BrowserRouter basename="/Rick-and-Morty-app/">
+  <Routes>
+    <Route path="/" element={<CharactersPage />} />
+    <Route path="/character/:id" element={<CharacterDetail />} />
+  </Routes>
+</BrowserRouter>
+
 function App() {
   const [count, setCount] = useState(0)
 
