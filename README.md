@@ -4,7 +4,7 @@ Mūsdienīga viena lapas aplikācija (SPA), kas ļauj apskatīt personāžus no 
 Izveidota, izmantojot **React**, **TypeScript**, **Axios**, **React Router** un **Tailwind CSS**.
 
 ![Rick and Morty Aplikācijas ekrānšāviņš](https://via.placeholder.com/1200x600/111827/00ff9f?text=Rick+and+Morty+Aplikācija)  
-*(Drīz šeit būs reāls ekrānšāviņš – izveido to pats un nomaini saiti)*
+*(Drīz šeit būs reāls ekrānšāviņš)*
 
 ## Demo
 
@@ -54,22 +54,19 @@ src/
 
 ## Kā palaist lokāli
 
-1. Klonē repo
+1. Klonē repo:
    ```bash
    git clone https://github.com/NastjaFedina/Rick-and-Morty-app.git
    cd Rick-and-Morty-app
 
-2. Instalē atkarības
-```bash
+2. Instalē atkarības:
 npm install
 
-3. Palaid izstrādes režīmā
-```bash
+3. Palaid izstrādes režīmā:
 npm run dev
 Atver pārlūkā: http://localhost:5173
 
-4. Veido produkcijas būvējumu
-```bash
+4. Veido produkcijas būvējumu:
 npm run build
 
 ## API
