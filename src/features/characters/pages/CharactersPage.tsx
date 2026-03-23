@@ -14,12 +14,12 @@ export default function CharactersPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Фильтры (управляются через состояние)
+  
   const [name, setName] = useState('');
   const [status, setStatus] = useState('');
   const [gender, setGender] = useState('');
 
-  // Функция загрузки персонажей
+  
   const loadCharacters = async (reset = false) => {
     if (loading) return;
     setLoading(true);
@@ -43,14 +43,14 @@ export default function CharactersPage() {
     }
   };
 
-  // Загрузка при монтировании и изменении фильтров
+  
   useEffect(() => {
     setPage(1);
     setCharacters([]);
     loadCharacters(true);
   }, [name, status, gender]);
 
-  // Кнопка "Загрузить ещё"
+  
   const handleLoadMore = () => {
     loadCharacters();
   };
@@ -58,12 +58,12 @@ export default function CharactersPage() {
   return (
     <div className="min-h-screen bg-gray-950 text-white pb-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        {/* Заголовок */}
+        {/* Heading */}
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-10 tracking-tight text-purple-400">
           Персонажи Rick and Morty
         </h1>
 
-        {/* Фильтры */}
+        {/* Filtrs */}
         <FilterBar
           name={name}
           status={status}
@@ -73,12 +73,12 @@ export default function CharactersPage() {
           onGenderChange={setGender}
         />
 
-        {/* Ошибка */}
+        {/* Error */}
         {error && <ErrorMessage message={error} onRetry={() => loadCharacters(true)} />}
 
-        {/* Список персонажей */}
+        {/* Characters catalog */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-          {/* Скелетоны при первой загрузке */}
+          {/* Skeletons for the first loading */}
           {loading && characters.length === 0 ? (
             Array.from({ length: 10 }).map((_, i) => <SkeletonCard key={i} />)
           ) : (
