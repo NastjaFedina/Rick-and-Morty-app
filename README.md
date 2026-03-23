@@ -1,73 +1,84 @@
-# React + TypeScript + Vite
+# Rick and Morty Personāžu Pētnieks
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Mūsdienīga viena lapas aplikācija (SPA), kas ļauj apskatīt personāžus no multfilmas **Rick and Morty**.  
+Izveidota, izmantojot **React**, **TypeScript**, **Axios**, **React Router** un **Tailwind CSS**.
 
-Currently, two official plugins are available:
+![Rick and Morty Aplikācijas ekrānšāviņš](https://via.placeholder.com/1200x600/111827/00ff9f?text=Rick+and+Morty+Aplikācija)  
+*(Drīz šeit būs reāls ekrānšāviņš – izveido to pats un nomaini saiti)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Demo
 
-## React Compiler
+Tiešsaistes versija:  
+👉 https://github.com/NastjaFedina/Rick-and-Morty-app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Galvenās iespējas
 
-## Expanding the ESLint configuration
+- Pilns personāžu saraksts ar bezgalīgu ielādi (“Ielādēt vēl” poga)
+- Meklēšana pēc vārda reāllaikā
+- Divi filtri: statuss (Alive / Dead / Unknown) un dzimums (Male / Female / Genderless / Unknown)
+- Detalizēta personāža lapa ar pilnu informāciju
+- Skaisti ielādes skeleton kartītes
+- Kļūdu apstrāde ar pogu “Mēģināt vēlreiz”
+- Pilnībā responsīvs dizains (mobilajām ierīcēm un datoram)
+- Visa koda tipizācija ar TypeScript
+- Tīra feature-based projekta struktūra
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Izmantotās tehnoloģijas
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React** + **Vite** (ātra izstrāde un HMR)
+- **TypeScript** (pilnīga tipu drošība props, API un stāvoklim)
+- **Axios** – pieprasījumi publiskajam API
+- **React Router v6** – klientu puses navigācija
+- **Tailwind CSS** – utilitārais CSS ietvars
+- **GitHub Pages** + **GitHub Actions** – automātisks deplojs
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Projekta struktūra
+src/
+├── components/               # Kopīgi komponenti
+│   ├── LoadingSpinner.tsx
+│   ├── ErrorMessage.tsx
+│   └── ...
+├── features/
+│   └── characters/           # Galvenā fīča – personāži
+│       ├── api.ts            # Visi pieprasījumi API
+│       ├── types.ts          # TypeScript interfeisi
+│       ├── components/
+│       │   ├── CharacterCard.tsx
+│       │   ├── FilterBar.tsx
+│       │   └── SkeletonCard.tsx
+│       └── pages/
+│           └── CharactersPage.tsx   # Galvenā saraksta lapa
+├── App.tsx                   # Maršrutēšana
+└── main.tsx
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Kā palaist lokāli
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Klonē repo
+   ```bash
+   git clone https://github.com/NastjaFedina/Rick-and-Morty-app.git
+   cd Rick-and-Morty-app
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. Instalē atkarības
+npm install
+
+3. Palaid izstrādes režīmā
+npm run dev
+Atver pārlūkā: http://localhost:5173
+
+4. Veido produkcijas būvējumu
+npm run build
+
+## API
+Izmantots publisks API:
+https://rickandmortyapi.com/api/character
+Bez atslēgām, bez stingriem ierobežojumiem.
+
+## Ko varētu uzlabot nākotnē
+
+1. Bezgalīga skrolēšana (infinite scroll) vietā “Ielādēt vēl” pogas
+2. Filtrs pēc sugas (species)
+3. Tumšā/gaismīgā tēma
+4. Filtru saglabāšana URL (query parametri)
+5. Kartīšu parādīšanās animācijas
+6. Mīļāko personāžu sadaļa (localStorage)
