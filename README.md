@@ -64,9 +64,10 @@ npm install
 
 3. Palaid izstrādes režīmā:
 npm run dev
-Atver pārlūkā: http://localhost:5173
 
-4. Veido produkcijas būvējumu:
+4. Atver pārlūkā: http://localhost:5173
+
+5. Veido produkcijas būvējumu:
 npm run build
 
 ## API
