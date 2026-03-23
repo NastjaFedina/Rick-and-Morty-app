@@ -13,6 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<h1>Characters Page (TODO)</h1>} />
         <Route path="/character/:id" element={<h1>Character Detail (TODO)</h1>} />
+        <Route path="/" element={<CharactersPage />} />
+        <Route path="/character/:id" element={<CharacterDetail />} />
       </Routes>
     </BrowserRouter>
   )
