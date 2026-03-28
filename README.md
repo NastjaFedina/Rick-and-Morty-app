@@ -4,7 +4,6 @@ Mūsdienīga viena lapas aplikācija (SPA), kas ļauj apskatīt personāžus no 
 Izveidota, izmantojot **React**, **TypeScript**, **Axios**, **React Router** un **Tailwind CSS**.
 
 ![Rick and Morty Aplikācijas ekrānšāviņš](https://via.placeholder.com/1200x600/111827/00ff9f?text=Rick+and+Morty+Aplikācija)  
-*(Drīz šeit būs reāls ekrānšāviņš)*
 
 ## Demo
 
