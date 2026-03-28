@@ -119,7 +119,7 @@ const FilterBar: FC<FilterBarProps> = ({
         </div>
       </div>
 
-      {/* Маленький текст-подсказка */}
+      {/* Small text  */}
       <p className="mt-4 text-sm text-gray-500 text-center md:text-left">
         Filtrs are automatic
       </p>
