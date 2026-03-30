@@ -8,7 +8,7 @@ const SkeletonCard: FC = () => {
 
       {/* Card info */}
       <div className="p-5 space-y-4">
-        {/* Название */}
+        {/* Name */}
         <div className="h-6 bg-gray-700 rounded-lg w-4/5"></div>
 
         {/* Status and display */}
